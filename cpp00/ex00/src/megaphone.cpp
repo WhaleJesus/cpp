@@ -6,18 +6,17 @@
 /*   By: sklaps <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 15:03:42 by sklaps            #+#    #+#             */
-/*   Updated: 2025/01/21 15:11:21 by sklaps           ###   ########.fr       */
+/*   Updated: 2025/01/27 14:47:49 by sklaps           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cctype>
 #include <string>
-using namespace std;
 
 int	main(int ac, char **av)
 {
-	string	s;
+	std::string	s;
 
 	if (ac < 2)
 		s = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
@@ -32,6 +31,6 @@ int	main(int ac, char **av)
 		}
 	}
 	s += '\n';
-	cout << s;
+	std::cout << s;
 	return (0);
 }
