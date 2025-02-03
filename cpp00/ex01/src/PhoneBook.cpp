@@ -70,10 +70,11 @@ void	PhoneBook::search()
 		if (contact[0] > 48 && contact[0] < 57 && contact.length() == 1)
 		{
 			index = contact[0] - '0';
-			//this->contactList[index].displayBig();
+			if (index > 0 && index <= this->i)
+				this->contactList[index - 1].displayBig();
+			else 
+				index = 0;
 		}
-		std::cout << index << std::endl;
+		//std::cout << index << std::endl;
 	}
-	std::cout << "Press enter to continue...";
-	std::getline(std::cin, contact);
 }

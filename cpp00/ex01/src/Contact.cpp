@@ -69,5 +69,11 @@ void	Contact::displaySimple(int index)
 void	Contact::displayBig()
 {
 	std::string arr[5] = {this->firstName, this->lastName, this->nickName, this->phoneNumber, this->secret};
-	str::string out[5] = {"First name: ", "Last name: ", "Nickname: ", "Phone number: ", "Darkest secret: "};
+	std::string out[5] = {"First name: ", "Last name: ", "Nickname: ", "Phone number: ", "Darkest secret: "};
+	std::string	input;
 
+	for (int i = 0; i<5; i++)
+		std::cout << out[i] << arr[i] << std::endl;
+	std::cout << "press enter to continue...";
+	std::getline(std::cin, input);
+}

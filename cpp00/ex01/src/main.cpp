@@ -12,12 +12,21 @@
 
 #include "main.hpp"
 
+std::string	my_toupper(std::string option)
+{
+	int	len;
+
+	len = option.length();
+	for (int i = 0; i < len; i++)
+		option[i] = toupper(option[i]);
+	return (option);
+}
+
 int	main(void)
 {
 	std::string display = "Welcome to my very cool Phonebook!\n----------------------------------\noptions:\n\n1: ADD\n2: SEARCH\n3: EXIT\nYour choice: ";
 	std::string	option = "";
 	PhoneBook pb;
-	int	len;
 
 	pb = PhoneBook();
 	while (option.compare("EXIT"))
@@ -25,9 +34,7 @@ int	main(void)
 		system("clear");
 		std::cout << display;
 		std::getline(std::cin, option);
-		len = option.length();
-		for (int i = 0; i < len; i++)
-			option[i] = toupper(option[i]);
+		//option = my_toupper(option);
 		if (!option.compare("ADD"))
 			pb.add();
 		else if (!option.compare("SEARCH"))
