@@ -15,7 +15,7 @@
 
 #include <string>
 
-Class Weapon
+class Weapon
 {
 	private:
 		std::string	_attr;
@@ -23,8 +23,8 @@ Class Weapon
 		Weapon();
 		Weapon(std::string attr);
 		~Weapon();
-		const	std::string& getType();
-		void	setType(std::string attr) const;
+		const	std::string& getType() const;
+		void	setType(std::string attr);
 };
 
 #endif

@@ -21,12 +21,16 @@ Weapon::Weapon(std::string attr)
 	_attr = attr;
 }
 
-Weapon::setType(std::string attr)
+Weapon::~Weapon()
+{
+}
+
+void Weapon::setType(std::string attr)
 {
 	_attr = attr;
 }
 
-const std::string &Weapon::getType(void)
+const std::string &Weapon::getType() const
 {
 	return _attr;
 }
