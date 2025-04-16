@@ -12,7 +12,7 @@
 
 #include "Fixed.hpp"
 #include <iostream>
-
+#include <cmath>
 
 Fixed::Fixed(void)
 {
@@ -26,11 +26,22 @@ Fixed::Fixed(const Fixed& other)
 	this->fixed_point = other.getRawBits();
 }
 
+Fixed::Fixed(const int i)
+{
+	this->fixed_point = i << this->fractional;
+}
+
+Fixed::Fixed(const float i)
+{
+	this->fixed_point = roundf(i * 256);
+}
+
 Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this->fixed_point != other.fixed_point)
 	{
+		penis();
 		this->fixed_point = other.getRawBits();
 	}
 	return *this;
@@ -52,3 +63,7 @@ void Fixed::setRawBits(int const raw)
 	std::cout << "setRawBits member function called" << std::endl;
 	this->fixed_point = raw;
 }
+/*
+float Fixed::toFloat(void) const
+{
+*/	

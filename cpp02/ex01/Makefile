@@ -35,7 +35,7 @@ SRCS_PATH		= ./src
 
 INCLUDE_PATH	= ./src
 
-SRCS			= Fixed.cpp
+SRCS			= Fixed.cpp penis.cpp
 
 MAIN			= main.cpp
 
