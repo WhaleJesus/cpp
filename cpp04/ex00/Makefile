@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 10:00:31 by tmatis            #+#    #+#              #
-#    Updated: 2025/04/21 13:48:59 by sklaps           ###   ########.fr        #
+#    Updated: 2025/02/06 17:07:08 by sklaps           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,11 @@
 ################################################################################
 
 
-NAME	= sed
+NAME	= zombie
 CC 		= c++
-CFLAGS	= -g -Wall -Werror -Wextra -std=c++98
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
-AUTHOR	= ME >:(
+AUTHOR	= tmatis
 DATE	= 26/09/2021
 HASH	= 
 
@@ -35,7 +35,7 @@ SRCS_PATH		= ./src
 
 INCLUDE_PATH	= ./src
 
-SRCS			= Output.cpp
+SRCS			= Zombie.cpp newZombie.cpp randomChump.cpp 
 
 MAIN			= main.cpp
 

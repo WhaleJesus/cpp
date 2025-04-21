@@ -16,20 +16,17 @@
 
 #include "Output.hpp"
 
-std::string replace_substr(std::string output, size_t found, 
-                          std::string find, std::string replace) {
-    std::string ret;
-    
-    ret.reserve(output.length() - find.length() + replace.length());
-    
-    for (size_t i = 0; i < found; ++i)
+std::string replace_all(std::string str, const std::string& find, const std::string& replace)
+{
+	if (find.empty() || find == replace)
+		return str;
+	std::size_t pos = 0;
+	while ((pos = str.find(find, pos)) != std::string::npos)
 	{
-        ret += output[i];
+		str.replace(pos, find.length(), replace);
+		pos += replace.length(); // move past the newly inserted replacement
 	}
-    ret += replace;
-    ret += output.substr(found + find.length());
-    
-    return ret;
+	return str;
 }
 
 void	program(char **av)
@@ -58,12 +55,8 @@ void	program(char **av)
 	find = av[2];
 	replace = av[3];
 	found = output.find(find);
-	while (found != std::string::npos)
-	{
-		output = cOutput.getStr();
-		cOutput.setStr(replace_substr(output, found, find, replace));
-		found = cOutput.getStr().find(find);
-	}
+	output = replace_all(output, find, replace);
+	cOutput.setStr(output);
 	filename.append(".replace");
 	std::ofstream fileWrite (filename.c_str());
 	if (fileWrite.is_open())
