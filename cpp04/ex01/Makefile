@@ -3,9 +3,9 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
+#    By: sklaps <sklaps@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/14 10:00:31 by tmatis            #+#    #+#              #
+#    Created: 2021/07/14 10:00:31 by sklaps            #+#    #+#              #
 #    Updated: 2025/02/06 17:07:08 by sklaps           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -35,7 +35,7 @@ SRCS_PATH		= ./src
 
 INCLUDE_PATH	= ./src
 
-SRCS			= Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS			= Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 MAIN			= main.cpp
 

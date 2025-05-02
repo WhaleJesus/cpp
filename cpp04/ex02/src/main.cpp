@@ -18,7 +18,6 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	const WrongAnimal* x = new WrongAnimal();
@@ -31,11 +30,9 @@ int main()
 	
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
-	meta->makeSound();
 	x->makeSound();
 	z->makeSound();
 
-	delete meta;
 	delete i;
 	delete j;
 	delete x;

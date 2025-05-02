@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #pragma once
+#include "Animal.hpp"
 
 class Cat : public Animal
 {
@@ -18,6 +19,6 @@ class Cat : public Animal
 		Cat();
 		Cat(const Cat& other);
 		Cat& operator= (const Cat& other);
-		~Cat();
-		void	makeSound(void);
-}
+		virtual ~Cat();
+		void	makeSound(void) const;
+};

@@ -10,34 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat()
+WrongCat::WrongCat()
 {
-	std::cout << "Cat constructor called" << std::endl;
-	this->type = "Cat";
+	std::cout << "WrongCat constructor called" << std::endl;
+	this->type = "WrongCat";
 }
 
-Cat::Cat(const Cat& other)
+WrongCat::WrongCat(const WrongCat& other)
 {
-	std::cout << "Cat Copy constructor called" << std::endl;
+	std::cout << "WrongCat Copy constructor called" << std::endl;
 	this->type = other.getType();
 }
 
-Cat& Cat::operator= (const Cat& other)
+WrongCat& WrongCat::operator= (const WrongCat& other)
 {
-	std::cout << "Cat Copy assignment operator called" << std::endl;
+	std::cout << "WrongCat Copy assignment operator called" << std::endl;
 	if (this->type != other.type)
 		this->type = other.getType();
 	return *this;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "Cat Destructor called" << std::endl;
-}
-
-void Cat::makeSound() const
-{
-	std::cout << "meow" << std::endl;
+	std::cout << "WrongCat Destructor called" << std::endl;
 }

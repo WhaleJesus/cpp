@@ -12,30 +12,41 @@
 
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog() : Animal()
 {
 	std::cout << "Dog constructor called" << std::endl;
 	this->type = "Dog";
+	_brain = new Brain();
 }
 
-Dog::Dog(const Dog& other)
+Dog::Dog(const Dog& other) : Animal(other)
 {
 	this->type = other.getType();
+	delete _brain;
+	_brain = new Brain(*(other._brain));
 }
 
 Dog& Dog::operator=(const Dog& other)
 {
 	if (this->type != other.type)
 		this->type = other.getType();
+	delete _brain;
+	_brain = new Brain(*(other._brain));
 	return *this;
 }
 
 Dog::~Dog()
 {
+	delete _brain;
 	std::cout << "Dog desturctr called" << std::endl;
 }
 
 void Dog::makeSound() const
 {
 	std::cout << "woof woof aaaaaaahhhhh bferwafgrsag" << std::endl;
+}
+
+void Dog::f()
+{
+	std::cout << "dog f called" << std::endl;
 }
