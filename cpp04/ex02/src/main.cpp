@@ -18,6 +18,10 @@
 
 int main()
 {
+	Dog bruh;
+	{
+		Dog tmp = bruh;
+	}
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	const WrongAnimal* x = new WrongAnimal();

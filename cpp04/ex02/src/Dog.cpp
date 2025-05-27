@@ -22,7 +22,6 @@ Dog::Dog() : Animal()
 Dog::Dog(const Dog& other) : Animal(other)
 {
 	this->type = other.getType();
-	delete _brain;
 	_brain = new Brain(*(other._brain));
 }
 

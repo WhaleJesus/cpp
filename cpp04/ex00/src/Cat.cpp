@@ -19,6 +19,7 @@ Cat::Cat()
 }
 
 Cat::Cat(const Cat& other)
+	: Animal(other)
 {
 	std::cout << "Cat Copy constructor called" << std::endl;
 	this->type = other.getType();

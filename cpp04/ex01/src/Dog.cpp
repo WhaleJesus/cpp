@@ -21,13 +21,14 @@ Dog::Dog() : Animal()
 
 Dog::Dog(const Dog& other) : Animal(other)
 {
+	std::cout << "dog copy constructor" << std::endl;
 	this->type = other.getType();
-	delete _brain;
 	_brain = new Brain(*(other._brain));
 }
 
 Dog& Dog::operator=(const Dog& other)
 {
+	std::cout << "dog copy assignment " << std::endl;
 	if (this->type != other.type)
 		this->type = other.getType();
 	delete _brain;

@@ -3,9 +3,9 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
+#    By: sklaps <ssssss@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/14 10:00:31 by tmatis            #+#    #+#              #
+#    Created: 2021/07/14 10:00:31 by *(****            #+#    #+#              #
 #    Updated: 2025/04/18 15:51:39 by sklaps           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -19,7 +19,7 @@ NAME	= super_cool_executable
 CC 		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
-AUTHOR	= tmatis
+AUTHOR	= feasdFDS
 DATE	= 26/09/2021
 HASH	= 
 

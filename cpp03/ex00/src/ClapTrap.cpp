@@ -30,6 +30,28 @@ ClapTrap::ClapTrap(std::string name)
 	_damage = 0;
 }
 
+ClapTrap::ClapTrap(const ClapTrap& other)
+{
+	std::cout << "Copy constructor called\n";
+	_name = other._name;
+	_health = other._health;
+	_energy = other._energy;
+	_damage = other._damage;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
+{
+	std::cout << "Copy assignment constructor called\n";
+	if (this != &other)
+	{
+		_name = other._name;
+		_health = other._health;
+		_energy = other._energy;
+		_damage = other._damage;
+	}
+	return *this;
+}
+
 ClapTrap::~ClapTrap(void)
 {
 	std::cout << "Destructor called" << std::endl;
@@ -37,6 +59,12 @@ ClapTrap::~ClapTrap(void)
 
 void ClapTrap::attack(const std::string& target)
 {
+	if (_energy <= 0)
+	{
+		std::cout << _name << " has no energy\n";
+		return ;
+	}
+	_energy--;
 	if (_health > 0)
 		std::cout << _name << " attacks " << target << " and deals " << _damage << " damage " << std::endl;
 	else {
@@ -59,6 +87,12 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (_energy <= 0)
+	{
+		std::cout << _name << " has no energy\n";
+		return ;
+	}
+	_energy--;
 	if (_health > 0)
 	{
 		_health += amount;

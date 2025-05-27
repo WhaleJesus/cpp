@@ -28,11 +28,39 @@ ScavTrap::ScavTrap(std::string name) {
     _damage = 20;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& other)
+{
+    std::cout << "ScavTrap copy constructor called" << std::endl;
+    _name = other._name;
+    _health = other._health;
+    _energy = other._energy;
+    _damage = other._damage;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+{
+	if (this != &other)
+	{
+		std::cout << "ScavTrap copy assignment constructor called" << std::endl;
+		_name = other._name;
+		_health = other._health;
+		_energy = other._energy;
+		_damage = other._damage;
+	}
+	return *this;
+}
+
 ScavTrap::~ScavTrap() {
     std::cout << "ScavTrap destructor called" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target) {
+	if (_energy <= 0)
+	{
+		std::cout << _name << " has no energy\n";
+		return ;
+	}
+	_energy--;
     if (_health > 0) {
         std::cout << "ScavTrap " << _name << " throws hands at " << target
                   << ", dealing " << _damage << " epic damage!" << std::endl;
@@ -42,6 +70,12 @@ void ScavTrap::attack(const std::string& target) {
 }
 
 void ScavTrap::guardGate() {
+	if (_energy <= 0)
+	{
+		std::cout << _name << " has no energy\n";
+		return ;
+	}
+	_energy--;
     std::cout << "ScavTrap " << _name << " is now in Gate keeper mode!" << std::endl;
 }
 
