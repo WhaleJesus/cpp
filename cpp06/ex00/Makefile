@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME     = maketest
+NAME     = scalar
 CC       = c++
 CFLAGS   = -Wall -Wextra -Werror -std=c++98
 DFLAGS   = -MMD -MF $(@:.o=.d)
@@ -26,9 +26,7 @@ FILE_EXTENSION = .cpp
 SRCS_PATH      = ./src
 INCLUDE_PATH   = ./src
 
-SRCS_LIST      = Intern.cpp AForm.cpp Bureaucrat.cpp \
-				 PresidentialPardonForm.cpp RobotomyRequestForm.cpp \
-				 ShrubberyCreationForm.cpp
+SRCS_LIST      = ScalarConverter.cpp
 
 MAIN           = main.cpp
 
@@ -56,7 +54,7 @@ $(NAME): $(OBJS) $(OBJ_MAIN)
 	@echo "\033[32m✔️ Build successful: $(NAME)\033[0m"
 
 $(OBJS_DIR)/%.o: $(SRCS_PATH)/%.cpp | $(OBJS_DIR)
-	@echo "Compiling $<..."
+	@echo "\033[38;2;255;255;0mCompiling $<...\033[0m"
 	@$(CC) $(CFLAGS) $(DFLAGS) -I$(INCLUDE_PATH) -c $< -o $@
 
 $(OBJ_MAIN): $(SRCS_PATH)/$(MAIN)
